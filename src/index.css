@@ -1,38 +1,39 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Original theme colors - kept as fallback */
     --background: 210 20% 98%;
     --foreground: 220 20% 20%;
-
     --card: 0 0% 100%;
     --card-foreground: 220 20% 16%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 16%;
-
     --primary: 220 90% 55%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 20% 96%;
     --secondary-foreground: 220 20% 16%;
-
     --muted: 210 20% 96%;
     --muted-foreground: 220 10% 60%;
-
     --accent: 220 90% 55%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 220 20% 92%;
     --input: 220 20% 92%;
     --ring: 220 90% 55%;
-
     --radius: 0.5rem;
+
+    /* Casino/Card game theme colors */
+    --felt-green: 120 54% 22%; /* #0B6623 */
+    --ace-white: 0 0% 97%; /* #F8F8F8 */
+    --casino-black: 0 0% 10%; /* #1A1A1A */
+    --gold-trim: 50 100% 50%; /* #FFD700 */
+    --card-back-red: 0 68% 41%; /* #B22222 */
+    --card-border: 0 0% 80%; /* #CCCCCC */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -95,7 +96,7 @@
   }
   
   .bg-pattern {
-    background-color: #427240; /* Changed to darker green color */
+    background-color: hsl(var(--felt-green)); /* Casino felt green */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -159,14 +160,23 @@
            tile-shadow hover:tile-shadow-hover active:tile-shadow-active
            active:translate-y-[1px] active:scale-[0.99]
            focus-visible:focus-ring dark:bg-secondary/50;
+    
+    /* Card game aesthetic styles */
+    background-color: hsl(var(--ace-white));
+    color: hsl(var(--casino-black));
+    border: 1px solid hsl(var(--card-border));
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 
+                0 1px 2px rgba(0, 0, 0, 0.1);
   }
   
   .empty-tile {
     @apply bg-transparent shadow-none hover:shadow-none active:scale-100 active:translate-y-0;
+    border: none;
   }
 
   .target-indicator {
     @apply text-xs font-medium uppercase tracking-wide text-foreground/50 
            absolute top-0 left-0 right-0 m-auto text-center -translate-y-8;
+    color: hsl(var(--gold-trim));
   }
 }

@@ -68,7 +68,7 @@ const Tile: React.FC<TileProps> = ({
       ref={tileRef}
       className={cn(
         "tile", 
-        isMovable && "cursor-pointer hover:bg-secondary/70",
+        isMovable && "cursor-pointer hover:bg-secondary/70 hover:text-card-back-red",
         !isMovable && "opacity-95 cursor-default"
       )}
       onClick={onMove}
