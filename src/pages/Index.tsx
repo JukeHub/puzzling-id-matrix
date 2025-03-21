@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Board from "@/components/Board";
 import TargetDisplay from "@/components/TargetDisplay";
@@ -19,7 +18,6 @@ const Index = () => {
   const [moveCount, setMoveCount] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
   
-  // Initialize or reset the puzzle
   const initializePuzzle = () => {
     const newPuzzleState = generateShuffledPuzzle();
     setPuzzleState(newPuzzleState);
@@ -32,12 +30,10 @@ const Index = () => {
     setIsInitialized(true);
   };
   
-  // Initialize the puzzle on first render
   useEffect(() => {
     initializePuzzle();
   }, []);
   
-  // Check for win condition when puzzle state changes
   useEffect(() => {
     if (puzzleState.length === 0) return;
     
@@ -46,7 +42,6 @@ const Index = () => {
     }
   }, [puzzleState]);
   
-  // Handle tile movement
   const handleMove = () => {
     setMoveCount(prev => prev + 1);
   };
@@ -55,9 +50,6 @@ const Index = () => {
     <div className="min-h-screen flex flex-col items-center px-4 py-12 md:py-16">
       <div className="w-full max-w-md mx-auto">
         <header className="text-center mb-8 animate-fade-in">
-          <h1 className="text-xs font-medium uppercase tracking-wider text-primary/80 mb-1">
-            Student ID Puzzle
-          </h1>
           <h2 className="text-3xl font-medium">Number Puzzle</h2>
         </header>
         
