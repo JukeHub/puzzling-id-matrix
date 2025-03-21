@@ -29,7 +29,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ moveCount, onReset }) => {
         <p className="text-muted-foreground mb-3">
           You completed the puzzle in {moveCount} {moveCount === 1 ? 'move' : 'moves'}.
         </p>
-        <div className="mb-6 text-sm italic text-primary-foreground/80 bg-primary/10 p-3 rounded-lg">
+        <div className="mb-6 text-sm italic text-foreground bg-primary/10 p-3 rounded-lg">
           "{quote}"
         </div>
         <Button 
