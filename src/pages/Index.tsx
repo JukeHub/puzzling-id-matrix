@@ -11,7 +11,7 @@ import {
   generateShuffledPuzzle, 
   TARGET_SEQUENCE 
 } from "@/utils/puzzleUtils";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 const Index = () => {
   const [puzzleState, setPuzzleState] = useState<PuzzleState>([]);

@@ -20,7 +20,7 @@ const Tile: React.FC<TileProps> = ({
   onMove,
   animationDirection
 }) => {
-  const tileRef = useRef<HTMLDivElement>(null);
+  const tileRef = useRef<HTMLButtonElement>(null);
   
   // Apply animation when the tile moves
   useEffect(() => {
