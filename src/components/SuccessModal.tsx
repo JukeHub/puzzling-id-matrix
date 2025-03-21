@@ -1,7 +1,8 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import { getRandomQuote } from "@/utils/quotes";
 
 interface SuccessModalProps {
   moveCount: number;
@@ -9,6 +10,12 @@ interface SuccessModalProps {
 }
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ moveCount, onReset }) => {
+  const [quote, setQuote] = useState("");
+  
+  useEffect(() => {
+    setQuote(getRandomQuote());
+  }, []);
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 px-4">
       <div 
@@ -19,9 +26,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ moveCount, onReset }) => {
           <Sparkles className="w-8 h-8 text-primary animate-pulse-soft" />
         </div>
         <h2 className="text-2xl font-semibold mb-2">Puzzle Solved!</h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-muted-foreground mb-3">
           You completed the puzzle in {moveCount} {moveCount === 1 ? 'move' : 'moves'}.
         </p>
+        <div className="mb-6 text-sm italic text-primary-foreground/80 bg-primary/10 p-3 rounded-lg">
+          "{quote}"
+        </div>
         <Button 
           onClick={onReset}
           size="lg" 
