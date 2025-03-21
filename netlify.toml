@@ -1,0 +1,16 @@
+
+# netlify.toml
+# Configuration file for Netlify deployment
+
+[build]
+  # Directory to publish (the output from the build script)
+  publish = "dist"
+  
+  # Build command to run
+  command = "npm run build"
+
+# Redirects for Single Page Applications (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
