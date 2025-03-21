@@ -94,6 +94,14 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  .bg-pattern {
+    background-image: url('/lovable-uploads/79c7204f-095d-4c83-98bb-7e402461d98e.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 }
 
 @layer utilities {

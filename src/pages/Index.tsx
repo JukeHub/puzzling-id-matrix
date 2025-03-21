@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Board from "@/components/Board";
 import TargetDisplay from "@/components/TargetDisplay";
@@ -47,8 +48,8 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-12 md:py-16">
-      <div className="w-full max-w-md mx-auto">
+    <div className="min-h-screen flex flex-col items-center px-4 py-12 md:py-16 bg-pattern">
+      <div className="w-full max-w-md mx-auto bg-white/90 dark:bg-background/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
         <header className="text-center mb-8 animate-fade-in">
           <h2 className="text-3xl font-medium">Number Puzzle</h2>
         </header>
