@@ -68,6 +68,7 @@ const Tile: React.FC<TileProps> = ({
       ref={tileRef}
       className={cn(
         "tile", 
+        "rotate-90", // Add rotation to make tiles appear vertical
         isMovable && "cursor-pointer hover:bg-secondary/70",
         !isMovable && "opacity-95 cursor-default"
       )}

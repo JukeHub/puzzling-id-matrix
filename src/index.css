@@ -123,6 +123,37 @@
   .focus-ring {
     @apply outline-none ring-2 ring-primary/30 ring-offset-2 ring-offset-background;
   }
+  
+  /* Add animation keyframes for rotated tiles */
+  @keyframes slide-rotated {
+    0% {
+      transform: translateX(0) rotate(90deg);
+    }
+    100% {
+      transform: translateX(var(--slide-distance)) rotate(90deg);
+    }
+  }
+  
+  @keyframes slide-up-rotated {
+    0% {
+      transform: translateY(0) rotate(90deg);
+    }
+    100% {
+      transform: translateY(var(--slide-distance)) rotate(90deg);
+    }
+  }
+  
+  .rotate-90 {
+    @apply animate-none;
+  }
+  
+  .rotate-90.animate-slide {
+    animation: slide-rotated 150ms ease-out forwards;
+  }
+  
+  .rotate-90.animate-slide-up {
+    animation: slide-up-rotated 150ms ease-out forwards;
+  }
 }
 
 @layer components {
