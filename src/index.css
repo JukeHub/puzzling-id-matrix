@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,35 +123,31 @@
     @apply outline-none ring-2 ring-primary/30 ring-offset-2 ring-offset-background;
   }
   
-  /* Add animation keyframes for rotated tiles */
-  @keyframes slide-rotated {
+  /* Simple animation keyframes (without rotation) */
+  @keyframes slide {
     0% {
-      transform: translateX(0) rotate(90deg);
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(var(--slide-distance)) rotate(90deg);
+      transform: translateX(var(--slide-distance));
     }
   }
   
-  @keyframes slide-up-rotated {
+  @keyframes slide-up {
     0% {
-      transform: translateY(0) rotate(90deg);
+      transform: translateY(0);
     }
     100% {
-      transform: translateY(var(--slide-distance)) rotate(90deg);
+      transform: translateY(var(--slide-distance));
     }
   }
   
-  .rotate-90 {
-    @apply animate-none;
+  .animate-slide {
+    animation: slide 150ms ease-out forwards;
   }
   
-  .rotate-90.animate-slide {
-    animation: slide-rotated 150ms ease-out forwards;
-  }
-  
-  .rotate-90.animate-slide-up {
-    animation: slide-up-rotated 150ms ease-out forwards;
+  .animate-slide-up {
+    animation: slide-up 150ms ease-out forwards;
   }
 }
 
